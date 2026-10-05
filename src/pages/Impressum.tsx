@@ -6,7 +6,7 @@ export default function Impressum() {
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>Jens Kathe<br />Hansastraße 6<br />34119 Kassel<br />Deutschland</p>
       <h2>Kontakt</h2>
-      <p>Telefon: <a className="link" href="tel:+491786652623">+49 178 6652623</a><br />E-Mail: <a className="link" href="mailto:jens@kathe.org">jens@kathe.org</a></p>
+      <p>E-Mail: <a className="link" href="mailto:jens@kathe.org">jens@kathe.org</a></p>
       <h2>Umsatzsteuer</h2>
       <p>Kleinunternehmer nach § 19 UStG</p>
       <h2>Inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV</h2>
