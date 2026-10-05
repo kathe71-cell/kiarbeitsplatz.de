@@ -13,3 +13,5 @@ Vite 8 + React 19 + Tailwind 4, statisch vorgerendert (`prerender.js`), Hosting 
 - KI-Check-Fragen: `src/data/check.ts`
 - Richtlinien-Generator: `src/pages/RichtliniePage.tsx`
 - Rechtsstand je Beitrag über `updated` pflegen
+
+Deployment: Push auf `main` baut automatisch auf Vercel (Team jens-projects2).
