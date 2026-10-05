@@ -249,3 +249,11 @@ export const berufe: Beruf[] = [
 
 export const felder: Feld[] = ['Technik', 'Daten', 'Produkt & Beratung', 'Recht & Governance'];
 export const berufBySlug = (s: string) => berufe.find((b) => b.slug === s);
+
+/** Farbe je Feld: Linien, Balken und Markierungen */
+export const feldFarbe: Record<Feld, string> = {
+  Technik: '#1f5a46',
+  Daten: '#2f4a7a',
+  'Produkt & Beratung': '#b0532c',
+  'Recht & Governance': '#6d3b5e',
+};

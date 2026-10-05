@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#14342a"/>
+  <g stroke="#c39a55" stroke-opacity="0.35" stroke-width="2">
+    <line x1="860" y1="140" x2="1010" y2="250"/><line x1="860" y1="140" x2="1010" y2="380"/><line x1="860" y1="320" x2="1010" y2="250"/>
+    <line x1="860" y1="320" x2="1010" y2="480"/><line x1="860" y1="490" x2="1010" y2="380"/><line x1="1010" y1="250" x2="1130" y2="320"/>
+    <line x1="1010" y1="380" x2="1130" y2="320"/><line x1="1010" y1="480" x2="1130" y2="320"/>
+  </g>
+  <g fill="#14342a" stroke="#c39a55" stroke-width="3">
+    <circle cx="860" cy="140" r="16" fill="#c39a55"/><circle cx="860" cy="320" r="11"/><circle cx="860" cy="490" r="11"/>
+    <circle cx="1010" cy="250" r="11"/><circle cx="1010" cy="380" r="16" fill="#c39a55"/><circle cx="1010" cy="480" r="11"/><circle cx="1130" cy="320" r="11"/>
+  </g>
+  <text x="80" y="130" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="6" fill="#c39a55">BERUFE · GEHÄLTER · EINSTIEG</text>
+  <text x="80" y="270" font-family="Palatino, Georgia, serif" font-size="88" fill="#f2e9d6">Arbeitsplätze in der</text>
+  <text x="80" y="375" font-family="Palatino, Georgia, serif" font-size="88" font-style="italic" fill="#c39a55">künstlichen Intelligenz</text>
+  <text x="80" y="540" font-family="Palatino, Georgia, serif" font-size="40" fill="#f2e9d6">KI·Arbeitsplatz</text>
+</svg>

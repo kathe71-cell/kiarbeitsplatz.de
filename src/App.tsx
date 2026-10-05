@@ -8,6 +8,7 @@ import BerufePage from './pages/BerufePage';
 import BerufPage from './pages/BerufPage';
 import GehaelterPage from './pages/GehaelterPage';
 import RatgeberPage from './pages/RatgeberPage';
+import FinderPage from './pages/FinderPage';
 import AboutPage from './pages/AboutPage';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
@@ -46,6 +47,7 @@ export function AppRoutes() {
       <Route path="/berufe" element={<BerufePage />} />
       {berufe.map((b) => <Route key={b.slug} path={`/berufe/${b.slug}`} element={<BerufPage slug={b.slug} />} />)}
       <Route path="/gehaelter" element={<GehaelterPage />} />
+      <Route path="/berufe-finder" element={<FinderPage />} />
       {ratgeber.map((r) => <Route key={r.slug} path={`/${r.slug}`} element={<RatgeberPage slug={r.slug} />} />)}
       <Route path="/ueber-uns" element={<AboutPage />} />
       <Route path="/impressum" element={<Impressum />} />

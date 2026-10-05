@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { berufe } from '../data/berufe';
+import { berufe, feldFarbe } from '../data/berufe';
 import Crumbs from '../components/Crumbs';
 import SalaryBar from '../components/SalaryBar';
 import Faq from '../components/Faq';
@@ -10,7 +10,7 @@ export default function GehaelterPage() {
     <div className="wrap py-10">
       <Crumbs items={[{ name: 'Gehälter', url: '/gehaelter' }]} />
       <header className="mt-10 max-w-3xl">
-        <h1 className="text-4xl sm:text-5xl">Gehälter in KI-Berufen</h1>
+        <h1 className="text-5xl sm:text-6xl">Gehälter in KI-Berufen 2026</h1>
         <p className="lede mt-5 text-muted">Bruttojahresgehälter in Deutschland vom Einstieg bis zur erfahrenen Fachkraft, ohne Führungsverantwortung.</p>
       </header>
       <div className="mt-12 overflow-x-auto">
@@ -29,7 +29,7 @@ export default function GehaelterPage() {
                 <td className="py-4 pr-4"><Link to={`/berufe/${b.slug}`} className="font-serif text-lg hover:text-accent">{b.name}</Link></td>
                 <td className="py-4 pr-4 text-right tabular-nums">{b.gehalt[0]}.000 €</td>
                 <td className="py-4 pr-4 text-right tabular-nums">{b.gehalt[1]}.000 €</td>
-                <td className="py-4"><SalaryBar range={b.gehalt} /></td>
+                <td className="py-4"><SalaryBar range={b.gehalt} color={feldFarbe[b.feld]} track="#ece7dc" thick /></td>
               </tr>
             ))}
           </tbody>
