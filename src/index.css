@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    scroll-behavior: smooth;
+    color: #0f172a;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+}
+
+/* Print-to-PDF / Clean Data Sheet */
+@media print {
+  header, footer, .no-print, .sticky-bar, button, .scroll-to-top {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
