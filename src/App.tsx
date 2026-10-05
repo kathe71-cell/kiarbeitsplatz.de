@@ -1,26 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
 import VercelAnalytics from './components/VercelAnalytics';
 import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
-import KiCheckPage from './pages/KiCheckPage';
-import RichtliniePage from './pages/RichtliniePage';
+import BerufePage from './pages/BerufePage';
+import BerufPage from './pages/BerufPage';
+import GehaelterPage from './pages/GehaelterPage';
+import RatgeberPage from './pages/RatgeberPage';
 import AboutPage from './pages/AboutPage';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import NotFoundPage from './pages/NotFoundPage';
-import { articles } from './data/articles';
+import { berufe } from './data/berufe';
+import { ratgeber } from './data/ratgeber';
 import { SITE_URL } from './site.config';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 antialiased">
-      <Navbar />
+    <div className="flex min-h-screen flex-col">
+      <Header />
       <main className="flex-1">{children}</main>
-      <ScrollToTop />
       <Footer />
     </div>
   );
@@ -43,11 +43,10 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      {articles.map((a) => (
-        <Route key={a.slug} path={`/${a.slug}`} element={<ArticlePage slug={a.slug} />} />
-      ))}
-      <Route path="/ki-check" element={<KiCheckPage />} />
-      <Route path="/ki-richtlinie" element={<RichtliniePage />} />
+      <Route path="/berufe" element={<BerufePage />} />
+      {berufe.map((b) => <Route key={b.slug} path={`/berufe/${b.slug}`} element={<BerufPage slug={b.slug} />} />)}
+      <Route path="/gehaelter" element={<GehaelterPage />} />
+      {ratgeber.map((r) => <Route key={r.slug} path={`/${r.slug}`} element={<RatgeberPage slug={r.slug} />} />)}
       <Route path="/ueber-uns" element={<AboutPage />} />
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />

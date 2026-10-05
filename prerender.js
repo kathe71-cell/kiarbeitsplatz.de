@@ -30,7 +30,7 @@ for (const r of routes) {
   fs.writeFileSync(abs(file), page(r.url, r.title, r.desc), 'utf-8');
   console.log(`  ✓ ${r.url}`);
 }
-fs.writeFileSync(abs('dist/404.html'), page('/404', 'Seite nicht gefunden | kiarbeitsplatz.de', 'Die angeforderte Seite wurde nicht gefunden.', 'noindex, nofollow'));
+fs.writeFileSync(abs('dist/404.html'), page('/404', 'Seite nicht gefunden | KI-Arbeitsplatz', 'Die angeforderte Seite wurde nicht gefunden.', 'noindex, nofollow'));
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes
@@ -38,9 +38,9 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
   .join('\n')}\n</urlset>\n`;
 fs.writeFileSync(abs('dist/sitemap.xml'), sitemap);
 
-const llms = `# kiarbeitsplatz.de\n\n> Ratgeber zu künstlicher Intelligenz am Arbeitsplatz in Deutschland: KI-Verordnung (AI Act), Mitbestimmung des Betriebsrats, Datenschutz, Rechte von Beschäftigten und praktische Einführung von KI. Keine Werbung, keine Partnerlinks.\n\n## Seiten\n\n${routes
+const llms = `# kiarbeitsplatz.de\n\n> Arbeitsplätze in der künstlichen Intelligenz in Deutschland: Berufsbilder, Gehaltsspannen, Wege in den Job und Wandel des Arbeitsmarkts. Keine Werbung, keine Partnerlinks.\n\n## Seiten\n\n${routes
   .filter((r) => !['/impressum', '/datenschutz'].includes(r.url))
-  .map((r) => `- [${r.title.replace(' | kiarbeitsplatz.de', '')}](${SITE}${r.url}): ${r.desc}`)
+  .map((r) => `- [${r.title.replace(' | KI-Arbeitsplatz', '')}](${SITE}${r.url}): ${r.desc}`)
   .join('\n')}\n`;
 fs.writeFileSync(abs('dist/llms.txt'), llms);
 console.log(`Prerendering fertig: ${routes.length} Seiten, sitemap.xml, llms.txt`);

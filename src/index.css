@@ -1,30 +1,39 @@
 @import "tailwindcss";
 
-@layer base {
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    scroll-behavior: smooth;
-    color: #0f172a;
-    background-color: #f8fafc;
-    overflow-x: hidden;
-  }
-  body {
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
+@theme {
+  --color-paper: #f6f4ef;
+  --color-ink: #191917;
+  --color-muted: #5f5c55;
+  --color-rule: #d8d3c8;
+  --color-accent: #1d4b3c;
+  --color-accent-soft: #e4ebe6;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Print-to-PDF / Clean Data Sheet */
+@layer base {
+  html { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  body { min-height: 100vh; }
+  h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
+  ::selection { background: var(--color-accent-soft); }
+  a { text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+}
+
+@layer components {
+  .wrap { max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
+  .prose-col { max-width: 40rem; }
+  .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); }
+  .lede { font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.55; color: var(--color-ink); }
+  .body-text p + p { margin-top: 1rem; }
+  .body-text { font-size: 1.0625rem; line-height: 1.75; color: #2b2a27; }
+  .link { color: var(--color-accent); text-decoration: underline; text-decoration-thickness: 1px; }
+  .link:hover { text-decoration-thickness: 2px; }
+}
+
+@media (min-width: 640px) { .wrap { padding-inline: 2rem; } }
+
 @media print {
-  header, footer, .no-print, .sticky-bar, button, .scroll-to-top {
-    display: none !important;
-  }
-  body {
-    background: white !important;
-    color: black !important;
-    font-size: 11pt;
-  }
-  .print-only {
-    display: block !important;
-  }
+  header, footer, .no-print { display: none !important; }
+  html { background: white; }
 }
