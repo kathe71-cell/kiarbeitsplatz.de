@@ -1,3 +1,4 @@
+import ProjektuebernahmePage from "./pages/ProjektuebernahmePage.tsx";
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -53,7 +54,8 @@ export function AppRoutes() {
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+      <Route path="/projektuebernahme" element={<ProjektuebernahmePage />} />
+</Routes>
   );
 }
 

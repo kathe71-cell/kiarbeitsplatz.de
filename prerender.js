@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const SITE = 'https://www.kiarbeitsplatz.de';
+const SITE = 'https://kiarbeitsplatz.de';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const abs = (p) => path.resolve(__dirname, p);
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
